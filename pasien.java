@@ -14,4 +14,8 @@ public class Pasien{
         System.out.println("NIK : " + nik);
         System.out.println("Keluhan : " + keluhan);
     }
+
+    public void getNama(){
+        System.out.print(nama);
+    }
 }

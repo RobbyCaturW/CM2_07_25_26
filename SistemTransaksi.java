@@ -4,12 +4,13 @@ public class SistemTransaksi {
     public void tambahPasien(Pasien pasien) {
         NodePasien baru = new NodePasien(pasien);
         if (head == null) {
-            head = tail = baru;
+            head = baru;
+            tail = baru;
         } else {
             tail.next = baru;
             tail = baru;
         }
-        System.out.println("Pasien berhasil ditambahkan ke antrian.");
+        System.out.println(">> Pasien masuk ke dalam antrian");
     }
 
     public Pasien layaniPasien() {
@@ -23,20 +24,24 @@ public class SistemTransaksi {
         return pasien;
     }
 
+    public void tampilkanPasien() {
+        NodePasien curr = head;
+        System.out.println("Pasien " + curr.data.nama + " dipanggil");
+    }
+
     public void tampilkanAntrian() {
         if (head == null) {
             System.out.println("Antrian kosong.");
             return;
         }
-        System.out.println("===== Antrian Pasien =====");
+        System.out.println();
+        System.out.println("-- Antrian Pasien --");
+        System.out.println("Antrian Pasien:");
         NodePasien current = head;
-        int no = 1;
         while (current != null) {
-            System.out.println(no + ". " + current.data.nama + " (NIK: " + current.data.nik + ")");
+            System.out.println("Nama pasien: " + current.data.nama + "\nNIK: " + current.data.nik + "\nKeluhan: " + current.data.keluhan);
             current = current.next;
-            no++;
         }
-        System.out.println("===========================");
     }
 
     public int hitungSisa() {

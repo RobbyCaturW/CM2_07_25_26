@@ -3,23 +3,20 @@ public class TransaksiLayanan {
     Dokter dokter;
     int durasiLayanan, biaya;
 
-    public TransaksiLayanan(Pasien pasien, Dokter dokter, int durasiLayanan, int biaya) {
+    public TransaksiLayanan(Pasien pasien, Dokter dokter, int durasiLayanan) {
         this.pasien = pasien;
         this.dokter = dokter;
         this.durasiLayanan = durasiLayanan;
-        this.biaya = biaya;
+        this.biaya = 50000;
     }
 
-    int hitungBiaya() {
+    public int hitungBiaya() {
         return durasiLayanan * 50_000;
     }
     
     public void tampilkanTransaksi() {
-        System.out.println("===== Transaksi Layanan =====");
-        pasien.tampilkanInformasi();
-        System.out.println("Dokter: " + dokter.idDokter + " - " + dokter.nama);
-        System.out.println("Durasi Layanan: " + durasiLayanan + " jam");
-        System.out.println("Biaya: Rp " + biaya);
-        System.out.println("===============================");
+        pasien.getNama();
+        System.out.print(" (" + durasiLayanan + " jam): Rp " + hitungBiaya());
+        System.out.println();
     }
 }

@@ -18,7 +18,7 @@ public class RiwayatTransaksi {
         rear = (rear + 1) % capacity;
         queue[rear] = t;
         size++;
-        System.out.println("Transaksi layanan dicatat.");
+        System.out.println(">> Pasien telah dilayani, Transaksi berhasil dicatat.");
     }
 
     public void tampilkanRiwayat() {
@@ -26,7 +26,8 @@ public class RiwayatTransaksi {
             System.out.println("Belum ada transaksi layanan.");
             return;
         }
-        System.out.println("===== Riwayat Transaksi Layanan =====");
+        System.out.println("-- Riwayat Transaksi --");
+        System.out.println("Daftar Transaksi:");
         for (int i = 0; i < size; i++) {
             int idx = (front + i) % capacity;
             queue[idx].tampilkanTransaksi();
